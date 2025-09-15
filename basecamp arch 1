@@ -1,0 +1,489 @@
+                    A1W1A1:
+lap = 400
+lapss = input("").split()
+
+for i in range(len(lapss)):
+    if lapss[i].isdigit() == True:
+        laps = int(lapss[i])
+        
+meters = lap*laps
+Kilometers = float(meters / 1000)
+print(f"Kilometers: {Kilometers}, Meters: {meters}")
+
+                    A1W1p1:
+user = input("name: ")
+
+print("Hello "  + user)
+
+                    A1w1p2:
+Years = int(input("Years: "))
+Months = str(Years *12)
+Days = str(Years *365)
+print("Months: " +Months+ ", Days: " +Days)
+
+                    A1w1p3:
+Width = float(input("Width: "))
+Length = float(input("Length: "))
+output = str(Width * Length)
+print("The Area of the Room: " +output)
+
+                    A1w1p4:
+widget = 75
+gizmo = 112
+Widgets = int(input("Number of widgets: "))
+Gizmos = int(input("Number of gizmos: "))
+total_weight = str((widget * Widgets)+(Gizmos * gizmo))
+print("The Total Weight of the Order: " +total_weight+ " grams")
+
+                    A1w1p5:
+numbers = []
+number = input("Numbers: ").split()
+x = 0
+for i in range(len(number[0])):
+    numbers.append(number[0][i])
+
+for i in range(len(numbers)):
+    x += int(numbers[i])
+    out = str(x)
+print("+".join(number[0][0:])+ "=" + out)
+
+                    A1w1p6:
+Days = int(input("Days: "))
+Hours = Days *24
+Minutes = Hours * 60
+Seconds = Minutes * 60
+print(f"Hours: {Hours}, Minutes: {Minutes}, Seconds: {Seconds}")
+
+                    A1w2a1:
+def validate_float(input_str: str) -> bool:
+    try:
+        float(input_str)
+        return True
+    except ValueError:
+        return False
+
+def validate_int(input_str: str) -> bool:
+    try:
+        int(input_str)
+        return True
+    except ValueError:
+        return False
+
+
+subscription_price = input('subscription_price: ')
+if not validate_float(subscription_price):
+    print("Invalid input")
+    exit()
+
+single_price = input("single ticket price: ")
+if not validate_float(single_price):
+    print("Invalid input")
+    exit()
+
+visits = input("amount of visits: ")
+if not validate_int(visits):
+    print("Invalid input")
+    exit()
+    
+subscription_price = float(subscription_price)
+single_price = float(single_price)
+visits = int(visits)
+
+max_ticket = visits * single_price
+saved = max_ticket - subscription_price
+
+if max_ticket > subscription_price:
+   print(f"Single tickets: €{max_ticket: .1f}\nMonthly subscription: €{subscription_price: .1f}\nAdvice: Buy a subscription\nYou save €{saved}") 
+else:
+    print(f"Single tickets: €{max_ticket: .1f}\nMonthly subscription: €{subscription_price: .1f}\nAdvice: Buy single tickets")
+  
+                    A1w2p1:
+Number = int(input("Number: "))
+if ((Number % 2) == 1):
+    print("Odd")
+else:
+    print("Even")
+
+                    A1w2p2:
+Year = int(input("Year: "))
+chek = (Year%400)
+Noleap = (chek%100)
+if (Noleap !=0) and ((Noleap%4 == 0)):
+    print("Leap year")
+else:
+    print("Not a leap year")
+
+                    A1w2p3:
+Sides = int(input("Sides between 3 and 10: "))
+Shape = ["Triangle","Square","Pentagon","Hexagon","Heptagon","Octagon","Nonagon","Decagon"]
+x = (Sides - 3)
+print(Shape[x])
+
+                    A1w2p4:
+Input = input("Sides: ")
+Parts = Input.replace(" ", "").split(",")
+
+sides = {}
+for part in Parts:
+    key, value = part.split("=")
+    sides[key] = int(value)
+    
+A = sides.get("a")
+B = sides.get("b")
+C = sides.get("c")
+
+if A == B == C:
+    print("Equilateral")
+elif (A==B!=C) or (A!=B==C) or (A==C!=B):
+    print("Isosceles")
+else:
+    print("Scalene")
+
+                    A1w2p5:
+Input = input("Date: ")
+Parts = Input.replace(" ", "").split(",")
+
+month = int(Parts[0].split(":")[1].strip())
+day = int(Parts[1].split(":")[1].strip())
+Date = {
+    (1, 1): "Niewjaarsdag",
+    (4, 18): "Goede vrijdag",
+    (4, 20): "Eerste paasdag",
+    (4, 21): "Tweede paasdag",
+    (12, 25): "kerst"
+}
+if (month, day) in Date:
+    print(Date[(month, day)])
+else:
+    print(f"No holiday found on Month: {month}, Day: {day}")
+        
+    
+                    A1w2p6:
+input = int(input("Human years: "))
+if input < 0:
+    print("Only positivenumbers are allowed")
+if input<=2:
+    first_2_dogyears = input * 10.5
+    print(first_2_dogyears)
+else:
+    input -=2
+    first2 = 2*10.5
+    last = input*4
+    dogyears = (last + first2)
+    print(dogyears)
+
+                    A1w2p7:
+Input = input("Position: ").lower()
+for i in range(len(Input)):
+    digits = Input[i].isdigit()
+    letter = Input[i].isalpha()
+    if digits == True:
+        digit = int(Input[i])
+    if letter == True:
+        let = Input[i]
+if let in ("a","c","e","g"):
+    if digit%2 == 0:
+        print("white")
+    else:
+        print("black")
+elif let in ("b","d","f","h"):
+    if digit%2 == 1:
+        print("white")
+    else:
+        print("black")
+        
+                    A1w2p8:
+License = input("License: ")
+def is_valid_license(License):
+    parts = License.lower().split("-")
+    
+    def is_letter(S): return all('a'<= C <= 'z' for C in S)
+    def is_digit(S): return all('0' <= C <= '9' for C in S)
+    
+    patterns = [
+        [2, 'L', 2, 'D', 2, 'D'],  # XX-99-99
+        [2, 'D', 2, 'D', 2, 'L'],  # 99-99-XX
+        [2, 'D', 2, 'L', 2, 'D'],  # 99-XX-99
+        [2, 'L', 2, 'D', 2, 'L'],  # XX-99-XX
+        [2, 'L', 2, 'L', 2, 'D'],  # XX-XX-99
+        [2, 'D', 2, 'L', 2, 'L'],  # 99-XX-XX
+        [2, 'D', 3, 'L', 1, 'D'],  # 99-XXX-9
+        [1, 'D', 3, 'L', 2, 'D'],  # 9-XXX-99
+        [2, 'L', 3, 'D', 1, 'L'],  # XX-999-X
+        [1, 'L', 3, 'D', 2, 'L'],  # X-999-XX
+        [3, 'L', 2, 'D', 1, 'L'],  # XXX-99-X
+        [1, 'D', 2, 'L', 3, 'D']   # 9-XX-999
+    ]
+
+    for pattern in patterns:
+        if len(parts) != len(pattern)//2:
+            continue 
+        match = True
+        for i in range(len(parts)):
+            expected_len = pattern[i*2]
+            expected_type = pattern[i*2+1]
+            if len(parts[i]) != expected_len:
+                match = False
+                break
+            if expected_type == 'L' and not is_letter(parts[i]):
+                match = False
+                break
+            if expected_type == 'D' and not is_digit(parts[i]):
+                match = False
+                break
+        if match:
+            return True
+    return False
+
+if is_valid_license(License):
+    print("Valid")
+else:
+    print("Invalid")
+    
+                    A1w3a 1,2 first version:
+def is_first_name_valid(name: str) -> bool:
+    return (
+        len(name) <= 10 and
+        len(name) >= 2 and
+        name[0].isupper() and
+        name.isalpha()
+    )
+    
+def is_last_name_valid(name: str) -> bool:
+    return (
+        len(name)>=2 and
+        len(name)<=20 and
+        all(character.isalpha() or character in " -/," for character in name)
+    )
+    
+def is_time_valid(time_str: str) -> bool:
+    time = time_str.split(":")
+    if time_str.isalpha():
+        return False
+    if not (time[0].isdigit() and time[1].isdigit()):
+        return False
+    if ((len(time[0]) == 2) and (len(time[1]) == 2)) and ((0<=int(time[0])<=23) and (0<=int(time[1])<=59)):
+        return True    
+    return False
+        
+
+def is_duration_valid(start, end) -> bool:
+    global duration
+    try:
+        if isinstance(start, int) and isinstance(end, int):
+            duration = end - start
+            return (
+                duration>=10 and
+                duration<=180
+                )
+
+        start = str(start)
+        end = str(end)
+        starting = start.split(":")
+        ending = end.split(":")
+        
+        if len(starting) !=2 or len(ending)!= 2:
+            return False
+        
+        if not all(parts.isdigit() for parts in starting + ending):
+            return False
+        
+        
+        start_in_minute = ((int(starting[0])*60) + int(starting[1]))
+        end_in_minute = ((int(ending[0])*60) + int(ending[1]))
+        if end_in_minute < start_in_minute:
+            return False
+    except ValueError:
+        return False
+    
+    duration = end_in_minute - start_in_minute
+    return (
+        duration>=10 and
+        duration<=180
+    )
+
+def main():
+    
+    global First_Name, Last_Name, Start_Time, Finish_Time, people, total_duration, fastest_name, fastest_time, full_name, FH, FM, AH, AM
+    fastest_name = ""
+    people = 0
+    total_duration = 0
+    fastest_time = 9999
+    yes = True
+    while yes:
+        
+        while True:
+            First_Name = input("First name: ")
+            if is_first_name_valid(First_Name):
+                break
+            print("input error")
+        while True:
+            Last_Name = input("Last name: ")
+            if is_last_name_valid(Last_Name):
+                break
+            print("input error")
+        while True:
+            while True:
+                Start_Time = input("Start time: ")
+                if is_time_valid(Start_Time):
+                    break
+                print("input error")
+            while True:
+                Finish_Time = input("Finish time: ")
+                if is_time_valid(Finish_Time):
+                    break
+                print("input error")
+                
+            if not is_duration_valid(Start_Time, Finish_Time):
+                print("input error")
+            else:
+                break
+            
+        full_name = First_Name + '_' + Last_Name
+        globals()[full_name + "_duration"] = duration
+        total_duration += duration
+        people += 1
+        DH = str(duration//60).zfill(2)
+        DM = str(duration%60).zfill(2)
+        if duration < fastest_time:
+            fastest_time = duration
+            fastest_name = First_Name + " " + Last_Name
+            FH = str(fastest_time//60).zfill(2)
+            FM = str(fastest_time%60).zfill(2)
+        
+        average = total_duration // people
+        AH = str(average//60).zfill(2)
+        AM = str(average%60).zfill(2)
+        if duration < average:
+            Speed_against_average = "faster than"
+        elif duration == average:
+            Speed_against_average = "as fast as"
+        else:
+            Speed_against_average = "slower than"
+        print(f'{First_Name} {Last_Name} did it in {DH}:{DM}')
+        print(f'This participant is currently {Speed_against_average} the average.')
+        
+        while True:
+            new = input("Are you a new person?: ").lower()
+            if new == "yes":
+                break
+            elif new == "no":
+                yes = False
+                break
+            else:
+                input("type: yes 'or' no")
+if __name__ == "__main__":
+    main()
+    print(f"Fastest participant: {fastest_name} ({FH}:{FM})")
+    print(f"Total participants: {people}")
+    print(f"Average time: {AH}:{AM}")
+    
+                    A1w3p1:
+word = input("give the word: ").lower()
+
+x = list(word)
+
+rev =[]
+
+for i in range(len(x) -1, -1, -1):
+    rev.append(x[i])
+    y = "".join(rev)
+
+
+
+if y == word:
+    print(f'{word} is a palindrome')
+else:
+    print(f'{word} is not a palindrome')
+    
+                    A1w3p2:
+word = input("give the word: ").lower()
+
+
+b = word.split(" ")
+x = list(b)
+c = "".join(x)
+rev =[]
+
+for i in range(len(c) -1, -1, -1):
+    rev.append(c[i])
+    y = "".join(rev)
+
+
+
+
+if y == c:
+    print(f'{word} is a palindrome')
+else:
+    print(f'{word} is not a palindrome')
+    
+                    A1w3p3:
+Width = int(input("Width: "))
+Height = int(input("Height: "))
+x = 0
+for i in range(Height):
+    for i in range(Width):
+        if x == 10:
+            x = 0
+        print(x, end=" ")
+        x += 1
+    print()
+
+
+                    A1w3p4:
+print("°C", "°F")
+C = 10
+
+while C <=100:
+    F = int((C*(9/5))+32)
+    print(C, F)
+    C +=10
+    
+                    A1w3p5:
+x = 1
+y = x
+
+for b in range(10):
+        print(y, end=" ")
+        y = y + x
+y = x
+print()
+for i in range(10):
+    print(i+1, end=" ")
+    for b in range(10):
+        print(y, end=" ")
+        y = y + x
+    x += 1
+    y = x
+    print()
+    
+                    A1w3p6:
+Binary = input("Binary: ")
+
+
+value = int(Binary, 2)
+print(value)
+
+                    A1w3p7:
+def And(a: bool, b: bool) ->bool:
+    if  b and a:
+        print(f'{a} + {b} = {True}')
+    else:
+        print(f'{a} + {b} = {False}')
+    
+def Or(a: bool, b: bool) ->bool:
+    if  not b or not a:
+        print(f'{a} + {b} = {True}')
+    else:
+        print(f'{a} + {b} = {False}')
+Value = [True, False]
+
+for a in Value:
+    for b in Value:
+        
+        And(a,b)
+        
+
+for a in Value:    
+    for b in Value:        
+        Or(a,b)
