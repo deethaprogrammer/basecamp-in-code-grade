@@ -1,0 +1,199 @@
+{
+    "P001": {
+        "name": "Laptop X200",
+        "category": "Laptop",
+        "price": 1299.99,
+        "stock": 5,
+        "variants": {
+            "color=silver": 3,
+            "color=black": 2
+        }
+    },
+    "P002": {
+        "name": "Smartphone Z9",
+        "category": "Smartphone",
+        "price": 899.50,
+        "stock": 10,
+        "variants": {
+            "storage=128GB": 6,
+            "storage=256GB": 4
+        }
+    },
+    "P003": {
+        "name": "Smartphone A4",
+        "category": "Smartphone",
+        "price": 399.50,
+        "stock": 2,
+        "variants": {
+            "storage=128GB": 1,
+            "storage=256GB": 1
+        }
+    },
+    "P004": {
+        "name": "Laptop L250",
+        "category": "Laptop",
+        "price": 1495.00,
+        "stock": 0,
+        "variants": {
+            "storage=128GB": 0,
+            "storage=256GB": 0
+        }
+    },
+    "P005": {
+        "name": "Tablet T8",
+        "category": "Tablet",
+        "price": 499.99,
+        "stock": 8,
+        "variants": {
+            "color=white": 4,
+            "color=black": 4
+        }
+    },
+    "P006": {
+        "name": "Smartwatch S3",
+        "category": "Smartwatch",
+        "price": 249.99,
+        "stock": 20,
+        "variants": {
+            "color=silver": 10,
+            "color=black": 10
+        }
+    },
+    "P007": {
+        "name": "Laptop X300",
+        "category": "Laptop",
+        "price": 1599.99,
+        "stock": 3,
+        "variants": {
+            "storage: 512GB": 1,
+            "storage: 1TB": 2
+        }
+    },
+    "P008": {
+        "name": "Smartphone X10",
+        "category": "Smartphone",
+        "price": 999.99,
+        "stock": 15,
+        "variants": {
+            "storage=128GB": 8,
+            "storage=256GB": 7
+        }
+    },
+    "P009": {
+        "name": "Laptop Pro 15",
+        "category": "Laptop",
+        "price": 2499.00,
+        "stock": 2,
+        "variants": {
+            "color=gray": 1,
+            "color=silver": 1
+        }
+    },
+    "P010": {
+        "name": "Tablet Mini 7",
+        "category": "Tablet",
+        "price": 349.99,
+        "stock": 10,
+        "variants": {
+            "color=pink": 5,
+            "color=blue": 5
+        }
+    },
+    "P011": {
+        "name": "Headphones H200",
+        "category": "Accessories",
+        "price": 129.99,
+        "stock": 25,
+        "variants": {
+            "color=black": 15,
+            "color=white": 10
+        }
+    },
+    "P012": {
+        "name": "Smartphone E5",
+        "category": "Smartphone",
+        "price": 599.99,
+        "stock": 7,
+        "variants": {
+            "storage=64GB": 3,
+            "storage=128GB": 4
+        }
+    },
+    "P013": {
+        "name": "Smartwatch E7",
+        "category": "Smartwatch",
+        "price": 199.99,
+        "stock": 30,
+        "variants": {
+            "color=red": 15,
+            "color=blue": 15
+        }
+    },
+    "P014": {
+        "name": "Laptop WorkStation Z300",
+        "category": "Laptop",
+        "price": 2999.99,
+        "stock": 1,
+        "variants": {
+            "storage=1TB": 1
+        }
+    },
+    "P015": {
+        "name": "Camera D7",
+        "category": "Camera",
+        "price": 799.99,
+        "stock": 6,
+        "variants": {
+            "color=black": 6
+        }
+    },
+    "P016": {
+        "name": "Wireless Mouse MX100",
+        "category": "Accessories",
+        "price": 29.99,
+        "stock": 50,
+        "variants": {
+            "color=black": 30,
+            "color=white": 20
+        }
+    },
+    "P017": {
+        "name": "Wireless Keyboard K120",
+        "category": "Accessories",
+        "price": 49.99,
+        "stock": 40,
+        "variants": {
+            "color=black": 40
+        }
+    },
+    "P018": {
+        "name": "Laptop Z200",
+        "category": "Laptop",
+        "price": 1099.99,
+        "stock": 4,
+        "variants": {
+            "storage=256GB": 2,
+            "storage=512GB": 2
+        }
+    },
+    "P019": {
+        "name": "Smartphone G5",
+        "category": "Smartphone",
+        "price": 499.99,
+        "stock": 12,
+        "variants": {
+            "storage=64GB": 6,
+            "storage=128GB": 6
+        }
+    },
+    "P020": {
+        "name": "Smartwatch T5",
+        "category": "Smartwatch",
+        "price": 349.99,
+        "stock": 18,
+        "variants": {
+            "color=black": 9,
+            "color=silver": 9
+        }
+    }
+}

@@ -1,0 +1,306 @@
+{
+  "Thijs de Jong": [
+    "Daan van Dijk",
+    "Carlos Garcia",
+    "Noah van Leeuwen",
+    "Eva van den Berg",
+    "Tess Meijer"
+  ],
+  "Daan van Dijk": [
+    "Lisa Peters",
+    "Sara Meijer",
+    "Raj Petrov",
+    "Thijs de Jong"
+  ],
+  "Luuk Mulder": [
+    "Noah van Leeuwen",
+    "Lucia Hernandez",
+    "Daan de Boer",
+    "Sofia Hernandez",
+    "Anna de Boer"
+  ],
+  "Daan de Boer": [
+    "Tess Jansen",
+    "Bram Smit",
+    "Luuk Mulder",
+    "Tess Meijer",
+    "Milan Visser"
+  ],
+  "Anna de Boer": [
+    "Julia Bakker",
+    "Bram Smit",
+    "Luuk Mulder",
+    "Julia de Boer",
+    "Amina Petrov",
+    "Tess Meijer"
+  ],
+  "Lisa Visser": [
+    "Emma Meijer",
+    "Amina Petrov",
+    "Noah van Leeuwen",
+    "Sophie Hendriks"
+  ],
+  "Amina Petrov": [
+    "Carlos Garcia",
+    "Bram Smit",
+    "Thijs Visser",
+    "Lisa Visser",
+    "Anna de Boer"
+  ],
+  "Emma Meijer": [
+    "Tess Jansen",
+    "Julia Bakker",
+    "Bram Mulder",
+    "Tess Meijer",
+    "Lisa Visser"
+  ],
+  "Lars Smit": [
+    "Julia Bakker",
+    "Bram Mulder",
+    "Noah van Leeuwen",
+    "Julia Bos",
+    "Kenji Nguyen",
+    "Thijs Visser"
+  ],
+  "Thijs Visser": [
+    "Lars van Dijk",
+    "Bram Mulder",
+    "Lars Smit",
+    "Tess de Boer",
+    "Maud Jansen",
+    "Tess Hendriks",
+    "Raj Petrov",
+    "Lucia Hernandez",
+    "Eva van den Berg",
+    "Amina Petrov",
+    "Sara Meijer"
+  ],
+  "Julia Bos": [
+    "Sofia Hernandez",
+    "Lucia Martinez",
+    "Kenji Petrov",
+    "Lars Smit"
+  ],
+  "Bram Mulder": [
+    "Emma Meijer",
+    "Lucia Martinez",
+    "Thijs Visser",
+    "Lars Smit"
+  ],
+  "Raj Petrov": [
+    "Daan van Dijk",
+    "Luis Lopez",
+    "Emma de Jong",
+    "Lucia Hernandez",
+    "Thijs Visser",
+    "Eva van den Berg",
+    "Anna Meijer"
+  ],
+  "Lucia Hernandez": [
+    "Carlos Garcia",
+    "Sophie van Dijk",
+    "Raj Petrov",
+    "Luuk Mulder",
+    "Thijs Visser",
+    "Sara Meijer",
+    "Milan Mulder"
+  ],
+  "Sara Meijer": [
+    "Daan van Dijk",
+    "Milan Mulder",
+    "Lucia Hernandez",
+    "Thijs Visser"
+  ],
+  "Julia Bakker": [
+    "Sara Hendriks",
+    "Lars Smit",
+    "Emma Meijer",
+    "Tess de Boer",
+    "Anna de Boer",
+    "Milan Visser"
+  ],
+  "Sara Hendriks": [
+    "Tess de Boer",
+    "Maud Jansen",
+    "Julia Bakker"
+  ],
+  "Sofia Hernandez": [
+    "Tess de Boer",
+    "Julia Bos",
+    "Anna van Leeuwen",
+    "Luuk Mulder"
+  ],
+  "Carlos Garcia": [
+    "Bram Smit",
+    "Tess de Boer",
+    "Lucia Hernandez",
+    "Amina Petrov",
+    "Thijs de Jong"
+  ],
+  "Maud Jansen": [
+    "Sara Hendriks",
+    "Tess Smit",
+    "Thijs Visser",
+    "Julia de Boer",
+    "Sem Smit"
+  ],
+  "Tess Meijer": [
+    "Tess Jansen",
+    "Emma Meijer",
+    "Thijs de Jong",
+    "Daan de Boer",
+    "Anna de Boer"
+  ],
+  "Bram Smit": [
+    "Daan de Boer",
+    "Amina Petrov",
+    "Carlos Garcia",
+    "Anna de Boer"
+  ],
+  "Tess Jansen": [
+    "Lars Dekker",
+    "Emma Meijer",
+    "Emma de Jong",
+    "Tess Mulder",
+    "Daan de Boer",
+    "Tess Meijer"
+  ],
+  "Tess Mulder": [
+    "Tess Jansen",
+    "Milan Mulder",
+    "Lotte Mulder",
+    "Lisa Peters"
+  ],
+  "Emma de Jong": [
+    "Tess Jansen",
+    "Raj Petrov",
+    "Lars van Dijk",
+    "Anna Meijer"
+  ],
+  "Tess Smit": [
+    "Maud Jansen"
+  ],
+  "Anna Meijer": [
+    "Raj Petrov",
+    "Lars van Dijk",
+    "Anna van Leeuwen",
+    "Emma de Jong"
+  ],
+  "Anna van Leeuwen": [
+    "Sofia Hernandez",
+    "Tess Hendriks",
+    "Milan Visser",
+    "Anna Meijer"
+  ],
+  "Sem Smit": [
+    "Maud Jansen",
+    "Lotte Mulder",
+    "Kenji Petrov",
+    "Thijs Dekker"
+  ],
+  "Lotte Mulder": [
+    "Luis Lopez",
+    "Tess Mulder",
+    "Sem Smit"
+  ],
+  "Kenji Petrov": [
+    "Lisa Peters",
+    "Julia Bos",
+    "Sem Smit"
+  ],
+  "Tess Hendriks": [
+    "Anna van Leeuwen",
+    "Kenji Nguyen",
+    "Thijs Visser"
+  ],
+  "Sophie Visser": [
+    "Thijs Dekker"
+  ],
+  "Thijs Dekker": [
+    "Lars Dekker",
+    "Lars van Dijk",
+    "Sem Smit",
+    "Sophie Visser"
+  ],
+  "Lisa Peters": [
+    "Daan van Dijk",
+    "Tess Mulder",
+    "Kenji Petrov",
+    "Milan Visser"
+  ],
+  "Eva van den Berg": [
+    "Lars Dekker",
+    "Raj Petrov",
+    "Thijs Visser",
+    "Thijs de Jong"
+  ],
+  "Lars Dekker": [
+    "Tess Jansen",
+    "Luis Lopez",
+    "Eva van den Berg",
+    "Julia de Boer",
+    "Thijs Dekker"
+  ],
+  "Milan Mulder": [
+    "Sara Meijer",
+    "Tess Mulder",
+    "Lucia Hernandez",
+    "Kenji Nguyen"
+  ],
+  "Lars van Dijk": [
+    "Emma de Jong",
+    "Thijs Dekker",
+    "Thijs Visser",
+    "Anna Meijer"
+  ],
+  "Lucia Martinez": [
+    "Julia Bos",
+    "Bram Mulder",
+    "Sophie Hendriks"
+  ],
+  "Julia de Boer": [
+    "Lars Dekker",
+    "Maud Jansen",
+    "Anna de Boer"
+  ],
+  "Luis Lopez": [
+    "Lars Dekker",
+    "Raj Petrov",
+    "Lotte Mulder"
+  ],
+  "Milan Visser": [
+    "Daan de Boer",
+    "Julia Bakker",
+    "Anna van Leeuwen",
+    "Lisa Peters"
+  ],
+  "Kenji Nguyen": [
+    "Tess Hendriks",
+    "Milan Mulder",
+    "Lars Smit"
+  ],
+  "Sophie van Dijk": [
+    "Lucia Hernandez",
+    "Sophie Hendriks"
+  ],
+  "Sophie Hendriks": [
+    "Lisa Visser",
+    "Sophie van Dijk",
+    "Lucia Martinez"
+  ],
+  "Noah van Leeuwen": [
+    "Luuk Mulder",
+    "Lars Smit",
+    "Thijs de Jong",
+    "Lisa Visser"
+  ],
+  "Tess de Boer": [
+    "Sara Hendriks",
+    "Julia Bakker",
+    "Carlos Garcia",
+    "Thijs Visser",
+    "Sofia Hernandez"
+  ],
+  "Sven Meijer": [],
+  "Amina Ali": []
+}
