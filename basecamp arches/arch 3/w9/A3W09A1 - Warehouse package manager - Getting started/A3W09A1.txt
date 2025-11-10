@@ -1,0 +1,62 @@
+Warehouse package manager - Getting started
+Before we begin
+The assignments in arch 3 and the first assignment in arch 4 will be a bit different from what you have seen so far. In the next 4 assignments, you will build further on what you have created in the weeks before, just like you would do in real life; software changes over time as requirements and goals change, for example because the company grows. This means that sometimes a solution that was perfect at the start will no longer be relevant after some time. These assignments are designed for you to experience this in practice, which means you might have to redo parts of your previous solution to fit the new assignment.
+
+Introduction
+There is a new competitor of PostNL and DHL, called Packets Now. They have recently received funds to build a warehouse and hire someone to develop the software to manage their processes. They have asked you to be their lead software developer! The software should keep track of the packages stored in their warehouse. Packets Now wants to grow rapidly, however, and they are planning on opening new warehouses in the near future. So, one of their requirements is that your software can scale with the company objectives.
+
+You are asked to implement a Warehouse class and a Package class, and a simple terminal interface through which the Packets Now employees can interact with the system. Feel free to implement any extra methods or attributes you think are useful or necessary. Packets Now also wants the program to be thoroughly tested, so you are asked to write unit tests for each method.
+
+Warehouse
+Attributes
+capacity: int - The number of packages that can be stored in the warehouse.
+packages: dict[str, Package] - Keeps track of the packages in the warehouse, with the package ID as the key and the corresponding Package instance as the value.
+Methods
+__init__(self, capacity: int = 10) - The constructor that receives the capacity, and sets packages to an empty dictionary.
+register_package(self, package: Package) -> bool - Receives a package to store in the warehouse. Returns True on success, False otherwise.
+You should check if the maximum capacity is reached, and if the package is already stored here.
+update_destination(self, package_id: str, new_distance: float) -> bool - Receives a package ID and the distance to the new destination. Returns True on success, False otherwise.
+You should check if the package is stored in the warehouse.
+You should use the update_destination() method from the Package instance you want to update.
+cancel_package(self, package_id: str) -> Package | None - Receives the ID of the package to cancel. Returns the package instance that was cancelled on success, None otherwise.
+You should check if the package is stored in the warehouse.
+get_package(self, package_id: str) -> Package | None - Returns the package instance if it exists, None otherwise.
+get_packages(self) -> tuple[Package, ...] - Returns a tuple of all the packages stored in the warehouse.
+Package
+Attributes
+id: str - A unique identifier.
+weight: float - The weight of the package in kg.
+travel_distance: float - The distance the package needs to travel from the warehouse to its destination in km.
+delivery_date: date - The date on which the package is scheduled to be delivered.
+Methods
+__init__(self, id: str, weight: float, travel_distance: float, delivery_date: date)
+get_delivery_fee(self) -> float - Calculates the fee in EUR based on the following formula: price = 0.50 + 0.08 * kg + 0.06 * km. You should round to two decimals.
+get_details(self) -> str - Returns the details of this instance in this format: Package(id={id}, weight={weight}, ...). It should include all attributes.
+update_destination(self, new_distance: float) -> None - Receives the distance to the new destination.
+Application interface
+All the Packets Now employees should be able to use your system, so it has to be easy to use. Therefore, you are asked to implement the following menu options:
+
+[R] Register a new package
+[U] Update a package's destination
+[C] Cancel package delivery
+[V] View all packages in the warehouse
+[Q] Quit
+You should use an if __name__ == "__main__": block in app.py to run the application. When starting the application, the user will not be asked for the capacity of the warehouse; you can use its default value.
+
+All dates will be entered and returned in YYYY-MM-DD format, and should be stored as date instances. You may assume that the input is correctly formatted (i.e., you do not have to do input validation).
+
+Registering a new package
+You should ask the user to enter all attributes in one line separated by a comma (e.g., p01,5.1,18.7,2025-04-18). On success, you should print the created package details. On failure, you should print Could not register new package..
+
+Updating a package destination
+You should ask the user to enter the package ID and the distance to the new delivery location in one line, separated by a comma. On success, you should print the updated package details. On failure, you should print Could not update the package..
+
+Cancelling a package delivery
+You should ask the user to enter the package ID. On success, you should print the cancelled package details. On failure, you should print Could not cancel the package.. When a package gets cancelled, it is also removed from the warehouse, so you no longer need to store it.
+
+Viewing all packages
+You should print the details for each package on a new line (see the example below). If there are no packages stored in the warehouse, you should print This warehouse is empty..
+
+Input your choice: V
+Package(id=1, ...)
+Package(id=2, ...)
