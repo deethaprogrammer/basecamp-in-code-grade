@@ -1,5 +1,4 @@
 from package import Package
-
 class Warehouse:
     def __init__(self, capacity: int = 10):
         """
@@ -30,26 +29,39 @@ class Warehouse:
             You should check if the package is stored in the warehouse.
             You should use the update_destination() method from the Package instance you want to update.
         """
-        if package_id in self.packages.keys():
-            pass
-    
+        p = self.get_package(package_id)
+        if p != None:
+            p.update_destination(new_distance)
+        
+            if self.packages[package_id].travel_distance == new_distance:
+                return True
+        else:
+            return False
+        
+        
     def cancel_package(self, package_id: str) -> Package | None:
         """
         Receives the ID of the package to cancel.
         Returns the package instance that was cancelled on success, None otherwise.
         """
-        pass
+        data_package = self.get_package(package_id)
+        if data_package != None:
+            self.packages.pop(package_id)
+            return data_package
+        else:
+            return None
     
     def get_package(self, package_id: str) -> Package | None:
         """
         Returns the package instance if it exists, None otherwise.
         """
-        pass
+        if package_id in self.packages.keys():
+            return self.packages[package_id]
+        else:
+            return None
     
     def get_packages(self) -> tuple[Package, ...]:
         """
         Returns a tuple of all the packages stored in the warehouse.
         """
         return tuple(self.packages.values())
-        pass
-    

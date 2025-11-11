@@ -24,9 +24,11 @@ class Package:
         returns as:
         Package(id={id}, weight={weight}, ...)
         """
-        return Package(id={self.id}, weight={self.weight}, travel_distance={self.travel_distance}, delivery_date={self.delivery_date})
+        return f"Package(id={self.id}, weight={self.weight}, travel_distance={self.travel_distance}, delivery_date={self.delivery_date})"
     
-    def update_destination(self, ID, new_distance: float) -> None:
+    def update_destination(self, new_distance: float) -> None:
         """
         Receives the distance to the new destination.
         """
+        self.travel_distance = new_distance
+        return self.travel_distance
