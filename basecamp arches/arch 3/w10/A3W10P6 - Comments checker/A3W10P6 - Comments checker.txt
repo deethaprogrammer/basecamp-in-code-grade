@@ -1,0 +1,23 @@
+When you write a function, it is a good idea to include a comment that outlines the function’s purpose, its parameters and its return value. However, sometimes comments are forgotten, or left out by well-intentioned programmers that plan to write them later but then never get around to it.
+
+
+Create a python program that reads one or more Python source files and identifies functions that are not immediately preceded by a comment.
+
+Extra:
+For the purposes of this exercise, assume that any line that begins with def, followed by a space, is the beginning of a function definition.
+Assume that the comment character, #, will be the first character on the previous line when the function has a comment.
+Display the names of all of the functions that do not have a comment, along with the file name and line number where the function definition is located.
+The user will provide the names of one or more Python files as command line parameters (comma separated).
+Input example (correct):
+functiontest.txt
+
+Output example (correct):
+File: functiontest.txt contains a function [function_name_here()] on line [1] without a preceding comment.
+File: functiontest.txt contains a function [another_function_name_here()] on line [15] without a preceding comment.
+Input example (error):
+functiontest.txt, blanc
+
+Output example (error):
+File: functiontest.txt contains a function [function_name_here()] on line [1] without a preceding comment.
+File: functiontest.txt contains a function [another_function_name_here()] on line [15] without a preceding comment.
+Error reading file: "blanc"
