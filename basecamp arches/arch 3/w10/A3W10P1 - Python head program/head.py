@@ -8,8 +8,12 @@ if __name__ == "__main__":
         print("Please provide a name as an argument.")
     try:
         with open(name, "r") as r:
-            text = r.read()
+            for i in range(10):
+                line = r.readline()
+                if not line:
+                    break
+                print(line, end='')
     except Exception as e:
         print("can't load this file {e}")
         quit()
-    print(text)
+    

@@ -1,0 +1,17 @@
+In this exercise you will create a Python program that identifies the longest word(s) in a file.
+
+Extra:
+Treat any group of non-white space characters as a word, even if it includes numbers or punctuation marks.
+
+Input example (correct):
+randomtext.txt
+
+Output example (correct):
+Length of longest word(s) is [11] chars
+These are all the words of that length:
+discovered., continuing., everything., interested., favourable., themselves., solicitude
+Input example (error):
+blanc
+
+Output example (error):
+Error reading file: "blanc"
