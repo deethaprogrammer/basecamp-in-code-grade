@@ -1,0 +1,83 @@
+Warehouse package manager - Logging
+Introduction
+Wow, what a rush! Thanks to your efforts, Packets Now made a flying start and they are already looking to expand their territory. They want to open more warehouses, so they can handle more packages at once. And as Packets Now handles more and more packages (and with that, more data), they have also asked you if you can create a functionality to gain some insights in the data.
+
+However, even though the start was a great success, not everything went flawlessly. Because of a thunderstorm, the warehouse experienced a temporary power outage. When the software restarted, they had to manually input all the packages into the system again.
+
+To solve these issues, Packets Now have asked you to upgrade your software with the following new or updated functionalities:
+
+Add an ID attribute to the Warehouse class so multiple warehouses can be created;
+Implement a logger that keeps track of all package changes in the warehouses (WarehouseLogger);
+Implement a method that restores the state (restore_state()) when the software gets restarted;
+Implement methods to gain valuable insights from the stored data (get_total_fee() and get_total_fee_by_range()).
+Continue with the implementation from week 9. This assignment description describes the changes you are expected to make. Feel free to implement any extra methods or attributes you think are useful or necessary. Write unit tests to test your new and updated functionalities.
+
+Warehouse
+Attributes
+id: str - A unique identifier.
+logger: WarehouseLogger - A WarehouseLogger instance. This should be instantiated in the Warehouse constructor.
+Methods
+__init__() - The warehouse ID should be the first positional parameter of the Warehouse constructor. It should not have a default value.
+restore_state(self) -> None - You should apply all transformations (i.e., packages linked to this warehouse get added/updated/cancelled) that are logged. When you are restoring the state, you should not log the actions again. You may assume that the delivery dates will be in the future, so you will not have to perform any checks with the delivery date.
+WarehouseLogger
+Every successful action that changes a package should be logged, except when restoring the state. The log file must exist in the root directory and must be named warehouse_log.txt. Keep in mind that all data read from a file is a string, and that your class attributes might have different data types.
+
+Attributes
+id: str - The warehouse ID the logger is connected to.
+Methods
+log_action(self, action: str, package: Package) -> None - Writes the action to the log file. An example of a correct log file is shown below.
+action is either "register", "update" or "cancel".
+If action is neither of these options, your function should raise a ValueError.
+The log line should separate values by a semicolon
+The first values should be the warehouse ID and the action
+If the action is:
+"register": add all the package attributes
+"update": add the package ID and the new distance
+"cancel": add the package ID
+get_all_packages_from_log_file(self, only_current_warehouse: bool = True) -> dict[str, Package] - Reads the log file and returns all the packages as a dictionary where the key is the package ID and the value is the corresponding Package instance.
+If only_current_warehouse is True, you should only add the package to the dictionary if the warehouse ID in the log is equal to the WarehouseLogger ID. Otherwise, if it is False, add all the packages to the dictionary.
+You should also take updates and cancellations into account.
+You should use the parse_package_from_register_log_line() method.
+parse_package_from_register_log_line(self, log_line: str) -> Package - Receives one line from the log file and parses it to a Package instance with all the correct data types.
+log_action() result examples
+If you have implemented the log_action() method correctly, and you perform the following actions:
+
+Add a package to the Beurs warehouse;
+Add a package to the Wijnhaven warehouse;
+Update the package stored at the Beurs warehouse;
+Cancel the package stored at the Beurs warehouse.
+Then the log file should look like this:
+
+Beurs;register;P001;7.3;16;2025-07-15
+Wijnhaven;register;P002;2.1;9.8;2025-07-16
+Beurs;update;P001;11.5
+Beurs;cancel;P001
+WarehouseManager
+This class will perform operations that cover more than one warehouse, for example getting all packages or calculating the total collected fee.
+
+Attributes
+logger: WarehouseLogger - A WarehouseLogger instance so the manager can access the log file.
+Methods
+__init__() - The constructor requires no arguments. In the constructor, the logger attribute will be set to a new WarehouseLogger instance with "MANAGER" as logger ID.
+stores_package_id(self, package_id: str) -> bool - Returns True if the package is stored in any warehouse, False otherwise.
+Hint: there is a WarehouseLogger method that you can use for this!
+get_all_packages(self) -> tuple[Package] - Returns a tuple of all packages stored in all warehouses.
+Hint: there is a WarehouseLogger method that you can use for this!
+get_total_fee(self) -> float - Returns the total fee collected by Packets Now for all warehouses. You should use self.get_all_packages() in the method.
+get_total_fee_by_range(self, from_date: date, to_date: date) -> float - Calculates the total fee collected by Packets Now between two dates for all warehouses, both inclusive (i.e., from 2025-04-04 to 2025-04-06 means you are calculating the total fee collected from packages delivered on 4, 5, and 6 April). You should use self.get_all_packages() in the method.
+Application interface
+With the new functionalities, the menu structure will also be slightly changed:
+
+[R] Register a new package
+[U] Update a package's destination
+[C] Cancel package delivery
+[V] View all packages in the warehouse
+[F] Get total fee between two dates
+[Q] Quit
+Dates are still entered and returned in YYYY-MM-DD format. You may assume that the input is correctly formatted.
+
+Registering a package
+Before registering a package, you should check if the ID is stored in any of the warehouses, not just the current warehouse. If the ID already exists, you should print Could not register new package..
+
+Getting total fee between two dates
+You should ask the user to enter two dates, separated by a comma (e.g., 2025-07-03,2025-07-15). The second date must be at, or after the first date. On success, you should print the total fee in this format: Collected fees: x.xx EUR where x.xx should be replaced with the fee. On failure, you should print Could not calculate the total fee..

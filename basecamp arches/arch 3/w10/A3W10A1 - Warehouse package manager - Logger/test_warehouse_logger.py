@@ -1,0 +1,2 @@
+from datetime import date
+print(date(2025, 11, 11))
