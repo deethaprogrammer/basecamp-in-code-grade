@@ -1,0 +1,1 @@
+{k: game.get(k, "") for k in fieldnames}
