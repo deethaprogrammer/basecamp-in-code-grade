@@ -1,0 +1,62 @@
+Warehouse package manager - State and reports
+Introduction
+The upgrades you have implemented have been received very well and Packets Now are still very proud to have you on their team! Since last time, more warehouses have been opened and the software needs changing once again to keep up with the rapidly growing business demands.
+
+One thing Packets Now noticed is that even though the logger works perfectly fine, its performance dropped quickly because of the huge number of packages they are handling. Additionally, they want to have even more insights in the packages they are moving. By using JSON files and CSV files, you will be able to fulfill Packets Now's wishes in no time!
+
+Continue with the implementation from week 10. This assignment description describes the changes you are expected to make. Feel free to implement any extra methods or attributes you think are useful or necessary. Write unit tests to test your new and updated functionalities.
+
+Package
+Methods
+convert_to_dict(self) -> dict - Returns all attributes of the instance as a dictionary. The date should be converted to a string in YYYY-MM-DD format. You should call this method when writing to the JSON state file.
+WarehouseLogger
+Each warehouse will have a JSON state file. This should consist of a list of package instances. An example can be found below. The state file should have the following name: {warehouse_id}_state.json.
+
+// `Beurs_state.json`
+[
+	{
+		"id": "P001",
+		"weight": 5.3,
+		"travel_distance": 17.4,
+		"delivery_date": "2025-05-04"
+	},
+	...
+]
+Methods
+update_state(self, packages: dict[str, Package]) -> None - Update the state of the given warehouse. This method should only receive the packages that are in the warehouse that the logger instance is connected to.
+parse_package_from_state_file(self, json_object: dict) -> Package - Receives one object from the JSON state file and parses it to a Package instance with all the correct data types.
+get_packages_from_state_file(self, state_file: str | None = None) -> dict[str, Package] - Returns all the packages from the given state file, or from the state file this logger instance is connected to if no state_file argument was given. The key is the package ID, the value is a Package instance. The state file will be the complete file name (e.g., "Beurs_state.json"). To read the file, use with open(os.path.join(sys.path[0], state_file)) as json_file:.
+get_packages_from_all_state_files(self) -> dict[str, Package] - Returns all the packages from all state files. Use for filename in os.listdir(sys.path[0]): to loop over all files in the same directory as app.py. Use the get_packages_from_state_file() method to your advantage.
+generate_summary_per_date_file(self, packages: dict[date, tuple[Package, ...]]) -> None - Generates a CSV file with summary_per_date.csv as filename and with date, num_packages, fee as columns, separated by semicolons.
+You should update the Warehouse and WarehouseManager classes to work with these new methods where necessary. If you wish to remove the old methods that used the logfile, you may do so.
+
+WarehouseManager
+Methods
+get_all_packages_by_delivery_date() -> dict[date, tuple[Package, ...]] - Gets all packages and orders them by date. The key is the date at which the package is delivered, the value is a tuple of all the packages that are being delivered on that date.
+Application interface
+With the new functionalities, the menu structure will also be changed:
+
+[R] Register a new package
+[U] Update a package's destination
+[C] Cancel package delivery
+[V] View all packages in the warehouse
+[G] Generate summary data
+[Q] Quit
+Dates are still entered and returned in YYYY-MM-DD format. You may assume that the input is correctly formatted.
+
+Generate summary data
+When the user wants to generate summary data, they are presented with another menu structure:
+
+[F] Get total fee between two dates
+[T] Get total fee for all packages currently stored
+[D] Generate CSV with summary details per date
+If the user tries some other value, you may ignore the choice and go back to the "main menu".
+
+Getting total fee between two dates
+This is the same option that was [F] last week. You do not need to make any additional changes.
+
+Getting total fee
+This is very similar to the [F] option, but it takes all packages into consideration, rather than the packages between two dates. You should print the total fee in this format: Collected fees: x.xx EUR where x.xx should be replaced with the fee.
+
+Generate CSV with summary details per date
+Use the WarehouseManager and WarehouseLogger classes to get the data in the right format and to generate the CSV file. Once the CSV has been generated, your program should print CSV generated..

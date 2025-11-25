@@ -1,0 +1,20 @@
+[
+    {
+        "id": "2",
+        "weight": 2.0,
+        "travel_distance": 3.0,
+        "delivery_date": "2002-11-12"
+    },
+    {
+        "id": "3",
+        "weight": 2.0,
+        "travel_distance": 3.0,
+        "delivery_date": "2002-11-11"
+    },
+    {
+        "id": "4",
+        "weight": 2.0,
+        "travel_distance": 3.0,
+        "delivery_date": "2002-11-11"
+    }
+]
