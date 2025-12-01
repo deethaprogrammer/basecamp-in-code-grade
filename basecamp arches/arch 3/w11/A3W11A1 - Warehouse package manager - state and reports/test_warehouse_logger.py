@@ -2,21 +2,24 @@ from warehouse_logger import WarehouseLogger
 from package import Package
 from datetime import date
 import pytest
+import os
 
-def test_stores_package_id():
-    logger = WarehouseLogger("test")
-    logger.save_file = "test_log.txt"
-    
-    with open(logger.save_file, "w") as f:
-        f.write("")
-        
-    package1 = Package("p001", 10.0, 150.0, date(2025, 11, 18))
-    package2 = Package("p002", 5.0, 50.0, date(2025, 11, 20))
-    logger.log_action("register", package1)
-    logger.log_action("register", package2)
-    
-    packages = logger.get_all_packages_from_log_file()
-    assert "p001" in packages
-    assert "p002" in packages
-    assert packages["p001"].weight == 10.0
-    assert packages["p002"].travel_distance == 50.0
+def test_update_and_restore_state():
+    test_id = "test"
+    logger = WarehouseLogger(test_id)
+    logger.state_file = f"{test_id}_state.json"
+    pkg_1 = Package("p001", 10.0, 150.0, date(2025, 11, 18))
+    pkg_2 = Package("p002", 5.0, 50.0, date(2025, 11, 20))
+    packages = {
+        pkg_1.id: pkg_1,
+        pkg_2.id: pkg_2,
+    }
+    logger.update_state(packages)
+    path = os.path.dirname(__file__)
+    state_path = os.path.join(path, logger.state_file)
+    assert os.path.exists(state_path)
+    restored = logger.get_packages_from_state_file(logger.state_file)
+    assert "p001" in restored
+    assert "p002" in restored
+    assert restored["p001"].weight == 10.0
+    assert restored["p002"].travel_distance == 50.0
