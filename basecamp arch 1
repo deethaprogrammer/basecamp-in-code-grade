@@ -1,4 +1,4 @@
-                    A1W1A1:
+                    #A1W1A1:
 lap = 400
 lapss = input("").split()
 
@@ -10,24 +10,24 @@ meters = lap*laps
 Kilometers = float(meters / 1000)
 print(f"Kilometers: {Kilometers}, Meters: {meters}")
 
-                    A1W1p1:
+                    #A1W1p1:
 user = input("name: ")
 
 print("Hello "  + user)
 
-                    A1w1p2:
+                    #A1w1p2:
 Years = int(input("Years: "))
 Months = str(Years *12)
 Days = str(Years *365)
 print("Months: " +Months+ ", Days: " +Days)
 
-                    A1w1p3:
+                    #A1w1p3:
 Width = float(input("Width: "))
 Length = float(input("Length: "))
 output = str(Width * Length)
 print("The Area of the Room: " +output)
 
-                    A1w1p4:
+#                    A1w1p4:
 widget = 75
 gizmo = 112
 Widgets = int(input("Number of widgets: "))
@@ -35,7 +35,7 @@ Gizmos = int(input("Number of gizmos: "))
 total_weight = str((widget * Widgets)+(Gizmos * gizmo))
 print("The Total Weight of the Order: " +total_weight+ " grams")
 
-                    A1w1p5:
+#                    A1w1p5:
 numbers = []
 number = input("Numbers: ").split()
 x = 0
@@ -47,14 +47,14 @@ for i in range(len(numbers)):
     out = str(x)
 print("+".join(number[0][0:])+ "=" + out)
 
-                    A1w1p6:
+ #                   A1w1p6:
 Days = int(input("Days: "))
 Hours = Days *24
 Minutes = Hours * 60
 Seconds = Minutes * 60
 print(f"Hours: {Hours}, Minutes: {Minutes}, Seconds: {Seconds}")
 
-                    A1w2a1:
+  #                  A1w2a1:
 def validate_float(input_str: str) -> bool:
     try:
         float(input_str)
@@ -97,14 +97,14 @@ if max_ticket > subscription_price:
 else:
     print(f"Single tickets: €{max_ticket: .1f}\nMonthly subscription: €{subscription_price: .1f}\nAdvice: Buy single tickets")
   
-                    A1w2p1:
+   #                 A1w2p1:
 Number = int(input("Number: "))
 if ((Number % 2) == 1):
     print("Odd")
 else:
     print("Even")
 
-                    A1w2p2:
+    #                A1w2p2:
 Year = int(input("Year: "))
 chek = (Year%400)
 Noleap = (chek%100)
@@ -113,13 +113,13 @@ if (Noleap !=0) and ((Noleap%4 == 0)):
 else:
     print("Not a leap year")
 
-                    A1w2p3:
+     #               A1w2p3:
 Sides = int(input("Sides between 3 and 10: "))
 Shape = ["Triangle","Square","Pentagon","Hexagon","Heptagon","Octagon","Nonagon","Decagon"]
 x = (Sides - 3)
 print(Shape[x])
 
-                    A1w2p4:
+      #              A1w2p4:
 Input = input("Sides: ")
 Parts = Input.replace(" ", "").split(",")
 
@@ -139,7 +139,7 @@ elif (A==B!=C) or (A!=B==C) or (A==C!=B):
 else:
     print("Scalene")
 
-                    A1w2p5:
+       #             A1w2p5:
 Input = input("Date: ")
 Parts = Input.replace(" ", "").split(",")
 
@@ -158,7 +158,7 @@ else:
     print(f"No holiday found on Month: {month}, Day: {day}")
         
     
-                    A1w2p6:
+        #            A1w2p6:
 input = int(input("Human years: "))
 if input < 0:
     print("Only positivenumbers are allowed")
@@ -172,7 +172,7 @@ else:
     dogyears = (last + first2)
     print(dogyears)
 
-                    A1w2p7:
+         #           A1w2p7:
 Input = input("Position: ").lower()
 for i in range(len(Input)):
     digits = Input[i].isdigit()
@@ -192,7 +192,7 @@ elif let in ("b","d","f","h"):
     else:
         print("black")
         
-                    A1w2p8:
+          #          A1w2p8:
 License = input("License: ")
 def is_valid_license(License):
     parts = License.lower().split("-")
@@ -240,7 +240,7 @@ if is_valid_license(License):
 else:
     print("Invalid")
     
-                    A1w3a 1,2 first version:
+           #         A1w3a 1,2 first version:
 def is_first_name_valid(name: str) -> bool:
     return (
         len(name) <= 10 and
@@ -378,7 +378,7 @@ if __name__ == "__main__":
     print(f"Total participants: {people}")
     print(f"Average time: {AH}:{AM}")
     
-                    A1w3p1:
+            #        A1w3p1:
 word = input("give the word: ").lower()
 
 x = list(word)
@@ -396,7 +396,7 @@ if y == word:
 else:
     print(f'{word} is not a palindrome')
     
-                    A1w3p2:
+             #       A1w3p2:
 word = input("give the word: ").lower()
 
 
@@ -417,7 +417,7 @@ if y == c:
 else:
     print(f'{word} is not a palindrome')
     
-                    A1w3p3:
+              #      A1w3p3:
 Width = int(input("Width: "))
 Height = int(input("Height: "))
 x = 0
@@ -430,7 +430,7 @@ for i in range(Height):
     print()
 
 
-                    A1w3p4:
+               #     A1w3p4:
 print("°C", "°F")
 C = 10
 
@@ -439,7 +439,7 @@ while C <=100:
     print(C, F)
     C +=10
     
-                    A1w3p5:
+                #    A1w3p5:
 x = 1
 y = x
 
@@ -457,14 +457,14 @@ for i in range(10):
     y = x
     print()
     
-                    A1w3p6:
+                 #   A1w3p6:
 Binary = input("Binary: ")
 
 
 value = int(Binary, 2)
 print(value)
 
-                    A1w3p7:
+                  #  A1w3p7:
 def And(a: bool, b: bool) ->bool:
     if  b and a:
         print(f'{a} + {b} = {True}')
