@@ -1,0 +1,48 @@
+Warehouse package manager - Database
+Introduction
+You have done an amazing job once again implementing the upgrades for Packets Now! The company has been growing much better than expected, and your efforts in creating the software have been of great help for this success. Still, as always, there is room for improvement.
+
+As Packets Now opened more and more warehouses, they found it difficult to keep track of all their data. Each warehouse has to generate their own reports and keeps track of their own packages, but there is no centralised data storage that works for all locations. Therefore, they have asked you to refactor the code to make use of an SQLite database instead of using separate files on each location.
+
+Continue with the implementation from week 11. This assignment description describes the changes you are expected to make. Feel free to implement any extra methods or attributes you think are useful or necessary. Write unit tests to test your new and updated functionalities.
+
+Package
+Methods
+You will no longer need the convert_to_dict() method.
+
+Warehouse and WarehouseManager
+Methods
+You can use the following code in the constructor to connect with the database:
+
+self.db_conn = sqlite3.connect(os.path.join(sys.path[0], "warehouse.db"), detect_types=sqlite3.PARSE_DECLTYPES)
+self.db_conn.execute("""
+    CREATE TABLE IF NOT EXISTS packages (
+        id                TEXT      PRIMARY KEY,
+        warehouse         TEXT      NOT NULL,
+        weight            NUMERIC   NOT NULL,
+        travel_distance   NUMERIC   NOT NULL,
+        delivery_date     DATE      NOT NULL
+    );
+""")
+The detect_types=sqlite3.PARSE_DECLTYPES makes sure that the delivery_date will be parsed to a datetime.date object when retrieving data from the database. This does require you to store the dates in the YYYY-MM-DD format, which has been the default for all warehouse assignments.
+
+You should refactor all the methods that are currently using JSON and/or log files (e.g., restore_state(), stores_package_id(), ...), such that they will be using the database to retrieve/update the data. You are no longer required to update the log file and the state files. Indeed, your code must work without needing or generating any files other than the Python scripts, the database, and the CSV reports.
+
+WarehouseLogger
+You will only need to keep the constructor and the generate_summary_per_date_file() method. The other methods are file-related and therefore obsolete. You may remove them if you wish.
+
+Methods
+generate_most_profitable_packages_file(self, packages: tuple[Package, ...], num_packages: int = 10) -> bool: - Creates a most_profitable_packages.csv file with package_id, date, fee as columns, separated by semicolons. The packages should be sorted on fee in descending order. If no problems were found, the method should return True, otherwise it should return False.
+num_packages must be an integer greater than 0.
+If num_packages is larger than the number of available packages, you should log all available packages.
+Application interface
+The menu to generate summary data will have an addition:
+
+[F] Get total fee between two dates
+[T] Get total fee for all packages currently stored
+[D] Generate CSV with summary details per date
+[B] Generate CSV with the most profitable packages
+Dates are still entered and returned in YYYY-MM-DD format. You may assume that the input is correctly formatted.
+
+Generate CSV with most profitable packages
+You should ask the user how many packages they want to log. The WarehouseLogger has a method that takes care of the CSV generation. If this failed, you should print Could not generate CSV. Else, you should print CSV generated..
