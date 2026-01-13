@@ -1,0 +1,94 @@
+In week 3 you developed a Python script to manually collect and validate climbing time data. Now that the event has concluded, all climber data has been preserved in an SQLite database. Your objective in this assignment is to build an advanced reporting module that transforms this raw data into meaningful insights.
+
+You will implement a Python class named ClimbReporter that interacts with the database through SQL queries. This class should consist of clearly defined methods that return summarized performance information. A helper class called DatabaseManager is provided for handling database operations, allowing you to focus on the logic and analysis.
+
+The emphasis of this assignment is on structured data analysis using SQL inside Python. You are not expected to modify the database or insert new data — only to query and interpret it effectively.
+
+Database Schema
+The database, named climbdata.db, contains the following three related tables:
+
+Table: climber
+id	first_name	last_name
+1	Anna	Keller
+2	Liam	Brooks
+3	Jo	van der Meer
+This table stores identity information for each participant.
+
+Table: climb
+id	climber_id	route_id	start_time	end_time
+1	1	1	09:15	10:05
+2	2	1	08:00	08:45
+3	3	2	08:30	09:05
+This table logs individual climbing attempts, referencing both the climber and the route climbed. All times are stored in HH:MM format.
+
+Table: route
+id	name	height
+1	East Ridge	1540
+2	Silver Path	2210
+This table contains the different climbing routes and their corresponding heights in meters.
+
+Implementation Task
+Create a Python class named ClimbReporter that uses the provided DatabaseManager to access and analyze the data. Each method in the class must use SQL queries to retrieve and return specific reports based on the current database contents.
+
+Your task is to write all reporting functionality within this class. Each method will be tested independently, and you must not alter the database schema or data.
+
+Method Specifications
+1. get_total_climbers(self) -> int
+Returns the total number of climbers currently registered in the database.
+
+2. get_fastest_climb(self, route_id: int) -> dict
+Returns a dictionary with the climber's full name and the shortest duration for the given route.
+
+{
+  "climber": "Liam Brooks",
+  "duration": "00:45"
+}
+3. get_average_duration(self, route_id: int) -> str
+Calculates and returns the average climbing time for a given route, formatted as HH:MM and rounded to the nearest minute.
+
+4. get_top_climbers(self, faster_than_minutes: int) -> list[str]
+Returns a list of full names of climbers who have completed at least one climb faster than the specified duration in minutes.
+
+5. get_climb_summary(self, climb_id: int) -> dict
+Provides a detailed summary of a specific climb attempt, including the climber’s name, route, duration, and a boolean indicating whether the climb was faster than the average for that route.
+
+{
+  "climber": "Jo van der Meer",
+  "route": "Silver Path",
+  "duration": "00:35",
+  "faster_than_average": True
+}
+6. get_highest_route(self) -> dict
+Returns the route with the highest elevation.
+
+{
+  "id": 5,
+  "route": "Silver Path",
+  "height": 2210
+}
+7. get_climber_with_most_climbs(self) -> str
+Returns the full name of the climber who has completed the highest number of climbs. In the case of a tie, any of the top climbers may be returned.
+
+8. get_all_climbs_from_climber(self, climber_id: int) -> list[dict]
+Returns a list of all climbs completed by a specific climber. Each dictionary contains the route name, start and end times, and duration in HH:MM format.
+
+[
+  {"id":1, "route": "East Ridge", "start": "09:15", "end": "10:05", "duration": "00:50"},
+  {"id":2,, "route": "Silver Path", "start": "11:00", "end": "11:35", "duration": "00:35"}
+]
+Development Guidelines
+Use multiple SQL queries per method where necessary.
+Reuse logic across methods to keep code clean and concise.
+Keep SQL separate from business logic wherever practical.
+Avoid modifying the existing database structure.
+Time Conversion Utilities
+Use the following helper functions to convert between minutes and HH:MM format:
+
+def to_minutes(hhmm: str) -> int:
+    h, m = map(int, hhmm.split(":"))
+    return h * 60 + m
+
+def to_hhmm(minutes: int) -> str:
+    h = minutes // 60
+    m = minutes % 60
+    return f"{h:02}:{m:02}"
